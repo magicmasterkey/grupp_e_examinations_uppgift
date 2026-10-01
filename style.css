@@ -1,0 +1,20 @@
+/* Nollställer default margin */
+*,
+*::before,
+*::after {
+  margin: 0;
+}
+
+/* Styles för mobil här*/
+
+
+/* Styles för tablet här */
+@media (min-width: 768px) {
+
+}
+
+
+/* Styles för desktop här */
+@media (min-width: 1024px) {
+
+}
