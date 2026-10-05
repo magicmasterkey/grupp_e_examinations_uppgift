@@ -22,10 +22,10 @@
         </nav>
     </header>
     <main>
-        <section class="historyAndCheckout">
+        <section class="historyAndCheckout" id="historyAndCheckout">
             <p>Stuff</p>
         </section>
-        <section class="movieDisplay">
+        <section class="movieDisplay" id="movieDisplay">
             <article class="movieCard" id="movie">
                 <img src="" alt="Bild av film">
                 <h2>Filmnamn</h2>
@@ -53,13 +53,34 @@
         </section>
     </main>
     <footer>
-        
         <section class="about">
-            <p>Om oss</p>
+            <h2>Om oss</h2>
+            <p>Vårt varumärkeslöfte, We Make Movies Better, innebär att vi alltid strävar efter att erbjuda de mest minnesvärda och omvälvande upplevelserna i biografer i världsklass.</p>
         </section>
         <section class="contact">
-            <p>Kontakt saker</p>
+            <h2>Kontakt saker</h2>
+            <form>
+                <label for="namn">Ditt Namn:</label>
+                <input type="text" id="namn" name="namn" required>
+
+                <label for="epost">Ditt E-post</label>
+                <input type="email" id="epost" name="epost" required>
+
+                <label for="meddelande">Meddelande</label>
+                <textarea id="meddelande" name="meddelande" placeholder="Jag tycker att webbsidan saknar..."></textarea>
+                <button>Skicka</button>
+            </form>
         </section>
+        <section class="footer-links">
+            <ul>
+                <a href="#about"><li>Om Oss</li></a>
+                <a href="#historyAndCheckout"><li>Historik</li></a>
+                <a href="#kontakt"><li>Kontakt</li></a>
+                <a href="#movieDisplay"><li>Filmer</li></a>
+            </ul>
+            <p>&copy; 2026</p>
+        </section>
+       
     </footer>
 </body>
 </html>
