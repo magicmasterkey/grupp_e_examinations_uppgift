@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="se">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,31 @@
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
 </head>
+
 <body>
-    <header>
-        <h1>Biografen</h1>
-        <nav class="mobileNav">
-            <a href="#">Stuff</a>
-            <a href="#">Stuff</a>
-            <a href="#">Stuff</a>
-        </nav>
-        <nav class="desktopNav">
-            <a href="#">Stuff</a>
-            <a href="#">Stuff</a>
-            <a href="#">Stuff</a>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">Logo</div>
+        <span class="burgerMenu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </span>
+        <ul class="desktopNav">
+            <li><a href="/">Hem</a></li>
+            <li><a href="#">Kontact</a></li>
+            <li><a href="#">Om oss</a></li>
+        </ul>
+        <ul class="mobileNav">
+            <li><a href="/">Hem</a></li>
+            <li><a href="#">Kontact</a></li>
+            <li><a href="#">Om oss</a></li>
+        </ul>
+    </nav>
     <main>
-        <section class="hsitoryAndCheckout">
+        <section class="historyAndCheckout">
             <p>Stuff</p>
         </section>
         <section class="movieDisplay">
@@ -61,4 +71,5 @@
         </section>
     </footer>
 </body>
+
 </html>

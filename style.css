@@ -5,16 +5,77 @@
   margin: 0;
 }
 
+/* Style nav */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #292929;
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+nav .logo {
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: white;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+.mobileNav,
+.burgerMenu {
+  display: none;
+}
+
+.burgerMenu{
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 768px) {
+  .desktopNav{
+    display: none;
+  }
+  .mobileNav,
+  .burgerMenu {
+    display: flex;
+  }
+
+  .mobileNav{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #292929;
+    margin-top: 5rem;
+    font-size: 2.5rem;
+  }
+}
+
+
 /* Styles för mobil samt globala styles här*/
 
 
 /* Styles för tablet här */
-@media (min-width: 768px) {
-
-}
+@media (min-width: 768px) {}
 
 
 /* Styles för desktop här */
-@media (min-width: 1024px) {
-
-}
+@media (min-width: 1024px) {}
