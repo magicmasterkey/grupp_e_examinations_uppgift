@@ -1,4 +1,5 @@
 
+// Navigationsmeny burger menu START
 let isBurger = false;
 const mobileNav = document.querySelector(".mobileNav");
 const burgerMenu = document.querySelector(".burgerMenu");
@@ -31,14 +32,39 @@ burgerMenu.addEventListener("click", (e) => {
         isBurger = false;
     }
 })
+// Navigationsmeny burger menu END
 
 
+// anpassat meddelande START
+const totalPriceBtns = document.querySelectorAll(".totalPriceBtn");
+totalPriceBtns.forEach(totalPriceBtn => {
+    totalPriceBtn.addEventListener("click", (e) => {
+        document.querySelector(".errorMessage").style.display = "flex";
+    });
+});
+document.querySelector(".errorMessage").addEventListener("click", (e) => {
+    if (e.target === document.querySelector(".errorMessage")) return document.querySelector(".errorMessage").style.display = "none";
+});
+document.querySelector(".errorMessageContent button").addEventListener("click", (e) => {
+    document.querySelector(".errorMessage").style.display = "none";
+});
+// anpassat meddelande END
 
+// Handtag för historikknapp START
+const historyBtns = document.querySelectorAll(".historyBtn");
+historyBtns.forEach(historyBtn => {
+    historyBtn.addEventListener("click", (e) => {
+        document.querySelector(".yourBookings").style.display = "flex";
+    });
+});
+document.querySelector(".yourBookings").addEventListener("click", (e) => {
+    if (e.target === document.querySelector(".yourBookings")) return document.querySelector(".yourBookings").style.display = "none";
+});
 
-
-
-
-
+document.querySelector(".yourBookingConent i").addEventListener("click", (e) => {
+    document.querySelector(".yourBookings").style.display = "none";
+});
+// Handtag för historikknapp END
 
 
 

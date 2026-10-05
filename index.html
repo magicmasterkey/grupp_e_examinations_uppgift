@@ -11,9 +11,9 @@
 
 <body>
     <nav>
-        <div class="logo">Logo</div>
+        <div class="logo">🎬 Bio</div>
         <span class="burgerMenu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
                 stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="3" y1="12" x2="21" y2="12"></line>
                 <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -22,13 +22,17 @@
         </span>
         <ul class="desktopNav">
             <li><a href="/">Hem</a></li>
-            <li><a href="#">Kontact</a></li>
+            <li><a href="#">kontakta</a></li>
             <li><a href="#">Om oss</a></li>
+            <li><button class="historyBtn">📜 Historik <span>0</span></button></li>
+            <li><button class="totalPriceBtn">🛒 Totalpris <span>0kr</span></button></li>
         </ul>
         <ul class="mobileNav">
             <li><a href="/">Hem</a></li>
-            <li><a href="#">Kontact</a></li>
+            <li><a href="#">kontakta</a></li>
             <li><a href="#">Om oss</a></li>
+            <li><button class="historyBtn">📜 Historik <span>0</span></button></li>
+            <li><button class="totalPriceBtn">🛒 Totalpris <span>0kr</span></button></li>
         </ul>
     </nav>
     <main>
@@ -57,7 +61,8 @@
     <footer>
         <section class="about">
             <h2>Om oss</h2>
-            <p>Vårt varumärkeslöfte, We Make Movies Better, innebär att vi alltid strävar efter att erbjuda de mest minnesvärda och omvälvande upplevelserna i biografer i världsklass.</p>
+            <p>Vårt varumärkeslöfte, We Make Movies Better, innebär att vi alltid strävar efter att erbjuda de mest
+                minnesvärda och omvälvande upplevelserna i biografer i världsklass.</p>
         </section>
         <section class="contact">
             <h2>Kontakt saker</h2>
@@ -75,16 +80,51 @@
         </section>
         <section class="footer-links">
             <ul>
-                <a href="#about"><li>Om Oss</li></a>
-                <a href="#historyAndCheckout"><li>Historik</li></a>
-                <a href="#kontakt"><li>Kontakt</li></a>
-                <a href="#movieDisplay"><li>Filmer</li></a>
+                <a href="#about">
+                    <li>Om Oss</li>
+                </a>
+                <a href="#historyAndCheckout">
+                    <li>Historik</li>
+                </a>
+                <a href="#kontakt">
+                    <li>Kontakt</li>
+                </a>
+                <a href="#movieDisplay">
+                    <li>Filmer</li>
+                </a>
             </ul>
             <h3>Loga eller namn på bio</h3>
             <p>&copy; 2026</p>
         </section>
-       
     </footer>
+
+    <div class="errorMessage">
+        <div class="errorMessageContent">
+            <h2>Välj en föreställning först genom att klicka på 'Köp biljett'.</h2>
+            <button>Ok</button>
+        </div>
+    </div>
+
+    <div class="yourBookings">
+        <div class="yourBookingConent">
+            <h2>Dina Bokningar</h2>
+            <i>x</i>
+            <div class="booking">
+                <div class="bookingCard">
+                    <h3>Dune: Part Two</h3>
+                    <p>Datum: 2026-10-10 kl. 19:00</p>
+                    <p>Antal: 1 st | Totalt: 150 kr</p>
+                    <span>Bokad: 2026-10-05 22:52</span>
+                </div>
+                <div class="bookingCard">
+                    <h3>Dune: Part Two</h3>
+                    <p>Datum: 2026-10-10 kl. 19:00</p>
+                    <p>Antal: 1 st | Totalt: 150 kr</p>
+                    <span>Bokad: 2026-10-05 22:52</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

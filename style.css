@@ -10,7 +10,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #292929;
+  background-color: #161b26;
   padding: 2rem;
   font-size: 1.5rem;
 }
@@ -39,22 +39,51 @@ nav ul li {
   display: none;
 }
 
-.burgerMenu{
+.burgerMenu {
   cursor: pointer;
+}
+
+nav ul li button {
+  background-color: #1f2637;
+  outline: 0;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+nav ul li button:hover {
+  background-color: #2a3245;
+}
+
+.historyBtn {
+  color: white;
+  border: 1px solid #ffffff14;
+}
+
+.historyBtn span {
+  background-color: red;
+  padding: .15rem .5rem;
+  border-radius: 50%;
+}
+
+.totalPriceBtn {
+  color: #f5c518;
+  border: 1px solid #f5c518;
 }
 
 @media (max-width: 1024px) {}
 
 @media (max-width: 768px) {
-  .desktopNav{
+  .desktopNav {
     display: none;
   }
+
   .mobileNav,
   .burgerMenu {
     display: flex;
   }
 
-  .mobileNav{
+  .mobileNav {
     width: 100%;
     display: none;
     flex-direction: column;
@@ -63,10 +92,93 @@ nav ul li {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #292929;
+    background-color: #161b26;
     margin-top: 5rem;
     font-size: 2.5rem;
   }
+}
+
+
+/* css för anpassat meddelande */
+.errorMessage,
+.yourBookings {
+  background-color: #161b26af;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.errorMessageContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1f2637;
+  color: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  gap: 2rem;
+}
+
+.errorMessageContent button {
+  padding: .2rem 3rem;
+  font-size: 1.2rem;
+  border: 0;
+  outline: 0;
+  background-color: #e50914;
+  border-radius: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* stil för bokningsmeddelanden */
+.yourBookingConent {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: #161b26;
+  padding: 2rem;
+  border-radius: 1rem;
+  position: relative;
+  gap: 2rem;
+  color: white;
+}
+
+.yourBookingConent i {
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #bfbfbf;
+  user-select: none;
+  cursor: pointer;
+}
+
+.booking {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bookingCard {
+  background-color: #2a3245;
+  padding: 1rem;
+  border-radius: .5rem;
+  border-left: 3px solid gold;
+  font-size: 1rem;
+}
+
+.bookingCard span {
+  font-size: .8rem;
+  color: gray;
 }
 
 
@@ -75,7 +187,7 @@ main {
   width: 100%;
 }
 
-.movieDisplay{
+.movieDisplay {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -109,24 +221,25 @@ main {
 
 
 /* Styles för desktop här */
-@media (min-width: 1024px) {
+@media (min-width: 1024px) {}
 
-}
-footer{
+footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: 
-  "about about about kontakt"
-  "footer footer footer footer"
+  grid-template-areas:
+    "about about about kontakt"
+    "footer footer footer footer"
   ;
   background-color: #474c80;
   gap: 2rem 0;
 }
+
 .about {
   grid-area: about;
-  
+
 }
+
 .about h2 {
   text-align: center;
   margin-bottom: 1rem;
@@ -136,30 +249,38 @@ footer{
   grid-area: kontakt;
   text-align: center;
 }
+
 .contact form {
-  justify-items: center; 
+  justify-items: center;
 }
-.contact label, button {
+
+.contact label,
+button {
   display: block;
 }
+
 .footer-links {
   grid-area: footer;
-  grid-column: span 4; 
- 
+  grid-column: span 4;
+
 }
+
 .footer-links li {
   list-style: none;
   display: inline;
   color: white;
 }
+
 .footer-links ul {
   padding-bottom: 2rem;
-  
+
 }
+
 .footer-links a {
   text-decoration: none;
   padding-right: 2rem;
 }
+
 .footer-links a:hover {
-  text-decoration: underline  ;
+  text-decoration: underline;
 }
