@@ -26,6 +26,7 @@ footer{
   "about about about kontakt"
   "footer footer footer footer"
   ;
+  background-color: #474c80;
   gap: 2rem 0;
 }
 .about {
@@ -55,6 +56,10 @@ footer{
 .footer-links li {
   list-style: none;
   display: inline;
+  color: white;
+}
+.footer-links ul {
+  padding-bottom: 2rem;
   
 }
 .footer-links a {
@@ -63,7 +68,4 @@ footer{
 }
 .footer-links a:hover {
   text-decoration: underline  ;
-}
-.footer p {
-align-self: ;
 }
