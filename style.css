@@ -226,18 +226,21 @@ main {
 footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
-    "about about about kontakt"
+    "about about about about"
+    "kontakt kontakt kontakt kontakt"
     "footer footer footer footer"
+    "end end end end"
   ;
-  background-color: #474c80;
-  gap: 2rem 0;
+  background-color: #161b26;
+  gap: 1rem 0;
+  color: white;
 }
-
 .about {
   grid-area: about;
-
+  border-bottom: 2px white solid;
+  
 }
 
 .about h2 {
@@ -248,39 +251,65 @@ footer {
 .contact {
   grid-area: kontakt;
   text-align: center;
+  border-bottom: 2px white solid;
+  
 }
 
 .contact form {
   justify-items: center;
 }
+.contact label {
+  padding: 0.5rem 0;
 
+}
 .contact label,
 button {
   display: block;
 }
-
+.contact input, textarea {
+  background: #2f3951;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+.contact input:focus, textarea:focus, button:focus {
+  background:#4a5c82;
+  outline: 2px white solid;
+  
+}
+.contact button {
+  background: #2f3951;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  margin: 0.5rem 0;
+}
 .footer-links {
   grid-area: footer;
-  grid-column: span 4;
-
+  border-bottom: 2px white solid;
 }
 
 .footer-links li {
   list-style: none;
-  display: inline;
   color: white;
 }
-
 .footer-links ul {
-  padding-bottom: 2rem;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 0;
+  height: 100%;
 }
 
+ 
 .footer-links a {
   text-decoration: none;
-  padding-right: 2rem;
-}
+  color: white;
+} 
 
 .footer-links a:hover {
   text-decoration: underline;
+}
+.slut {
+  grid-area: end;
 }
