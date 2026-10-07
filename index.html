@@ -58,6 +58,40 @@
             </article>
         </section>
     </main>
+
+    <section class="bookingsection">
+    <h2>Boka plats och biljetter</h2>
+
+    <form action="#" method="post">
+      <label for="Selectshow">Välj film</label>
+        <select id="Selectshow" name="Selectshow" required>
+            <option value="" >Välj film</option>
+            <option value="backToTheFuture">Back to the Future</option>
+            <option value="spiderman"> Spiderman</option>
+            <option value="theRoom"> The Room</option>
+            <option value=" theMask"> The Mask</option>
+      </select>
+
+
+      <label for="tickets">Välj antal biljetter</label>
+      <select id="tickets" name="tickets" required> 
+        <option value ="">Välj antal biljetter</option>
+        <option value ="1">1</option>
+        <option value ="2">2</option> 
+        <option value ="3">3</option>
+        <option value ="4">4</option>
+        </select>
+
+        <label for="date">Välj datum</label>
+      <input type="date" id="date" name="date" required>
+      
+      <label for="time" >Välj tid</label>
+      <input type="time" id="time" name="time" required>
+      <button type ="submit">Boka</button>
+
+
+    </form>
+</section>
     <footer>
         <section class="about">
             <h2>Om oss</h2>
