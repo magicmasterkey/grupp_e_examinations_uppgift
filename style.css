@@ -224,30 +224,7 @@ main {
 
 
 /* Styles för desktop här */
-@media (min-width: 1024px) {
-  .alignOrder{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 1 rem;
-    font-size: 1.5rem;
-  }
-
-  .alignOrder button{
-    font-size: 1.5rem;
-    width: 1rem;
-    height: 1rem;
-    padding: 1rem;
-  }
-
-  .addTicket{
-    background-color: limegreen;
-  }
-
-  .reduceTicket{
-    background-color: red;
-  }
-}
+@media (min-width: 1024px) {}
 
 footer {
   display: grid;
