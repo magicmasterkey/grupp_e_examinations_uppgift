@@ -66,7 +66,17 @@ document.querySelector(".yourBookingConent i").addEventListener("click", (e) => 
 });
 // Handtag för historikknapp END
 
+// Kontakt fomulär START
+const contactForm = document.querySelector(".contact")
+contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const namn = document.querySelector("#namn").value;
+    const email = document.querySelector("#epost").value;
+    const message = document.querySelector("#meddelande").value; 
+    console.log(`Namn: ${namn} E-post: ${email} Meddelande: ${message}`);
+})
 
+// Kontakt formulär END
 
 
 
