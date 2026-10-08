@@ -191,32 +191,81 @@ main {
 }
 
 .movieDisplay {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3rem;
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .movieCard {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
   gap: 1rem;
-  width: 20rem;
-  background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 3rem;
+  width: fit-content;
+  background-color: #1f2637;
+  border-radius: 1rem;
+  padding-bottom: 2rem;
+}
+
+.moviePoster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem 0 0 0;
+}
+
+.movieInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
   padding: 1rem;
 }
 
-.movieCard h2 {
-  font-size: 2rem;
-  text-align: center;
+.moviePrice{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.movieCard img {
-  width: 12rem;
-  height: 18rem;
+.moviePrice span{
+  color: #f5c518;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.moviePrice p{
+  padding: .5rem;
+  background: #10b98126;
+  color: #10b981;
+  border-radius: .8rem;
+  font-weight: 500;
+}
+
+.movieCard button{
+  width: fit-content;
+  margin: auto;
+  background-color: #e50914;
+  font-size: 1rem;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  outline: 0;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.movieCard button:hover{
+  background-color: #e50914c1;
+}
+
+.btn-book:disabled {
+  background: #374151;
+  color: #9ca3af;
+  cursor: not-allowed;
 }
 
 /* Styles för tablet här */
