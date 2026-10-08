@@ -256,10 +256,18 @@ main {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  transition: ease-in-out, 1s;
 }
 
 .movieCard button:hover{
-  background-color: #e50914c1;
+  background-color:white;
+  color: #e50914;
+}
+
+.movieCard button:active{
+  color: black;
+  background-color:#161b26;
+  transition: none;
 }
 
 .btn-book:disabled {
@@ -315,7 +323,7 @@ footer {
 
 }
 .contact label,
-button {
+.contact button {
   display: block;
 }
 .contact input, textarea {
@@ -323,7 +331,7 @@ button {
   border: 1px solid white;
   border-radius: 4px;
 }
-.contact input:focus, textarea:focus, button:focus {
+.contact input:focus, textarea:focus, .contact button:focus {
   background:#4a5c82;
   outline: 2px white solid;
   
