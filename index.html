@@ -63,6 +63,8 @@
     <h2>Boka plats och biljetter</h2>
 
     <form action="#" method="post">
+
+        <div>
       <label for="Selectshow">Välj film</label>
         <select id="Selectshow" name="Selectshow" required>
             <option value="" >Välj film</option>
@@ -71,7 +73,9 @@
             <option value="theRoom"> The Room</option>
             <option value=" theMask"> The Mask</option>
       </select>
+</div>
 
+        <div>
 
       <label for="tickets">Välj antal biljetter</label>
       <select id="tickets" name="tickets" required> 
@@ -81,14 +85,18 @@
         <option value ="3">3</option>
         <option value ="4">4</option>
         </select>
+</div>
 
+        <div>
         <label for="date">Välj datum</label>
       <input type="date" id="date" name="date" required>
-      
+      </div>
+
+      <div>
       <label for="time" >Välj tid</label>
       <input type="time" id="time" name="time" required>
       <button type ="submit">Boka</button>
-
+</div>
 
     </form>
 </section>
