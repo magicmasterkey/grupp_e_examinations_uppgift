@@ -285,7 +285,6 @@ footer {
     "end" 
   ;
   background-color: #161b26;
-  gap: 1rem 0;
   color: white;
 }
 
@@ -351,7 +350,9 @@ textarea:focus,
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding-left: 0;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-links a {
