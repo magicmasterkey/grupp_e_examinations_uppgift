@@ -72,13 +72,57 @@ contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const namn = document.querySelector("#namn").value;
     const email = document.querySelector("#epost").value;
-    const message = document.querySelector("#meddelande").value; 
+    const message = document.querySelector("#meddelande").value;
     console.log(`Namn: ${namn} E-post: ${email} Meddelande: ${message}`);
 })
 
 // Kontakt formulär END
 
 
+
+//Bokning popup START
+const movieCards = document.querySelectorAll(".movieCard");
+
+movieCards.forEach(movie => {
+
+    const buyButton = movie.querySelector(".buyButton");
+    const ticketPopup = movie.querySelector(".ticketPopup");
+    const bokaButton = movie.querySelector(".bokaButton");
+    const tickets = movie.querySelector(".tickets");
+
+
+    buyButton.addEventListener("click", (e) => {
+        ticketPopup.classList.add("oppen");
+    
+    });
+
+
+    ticketPopup.addEventListener("click", (e) => {
+        if (e.target === ticketPopup) {
+            ticketPopup.classList.remove("oppen");
+
+        }
+    });
+
+
+    bokaButton.addEventListener("click", (e) => {
+        if (tickets.value === "" || tickets.value < 1) {
+            alert("Vänligen välj minst en biljett för bokning!");
+            ticketPopup.classList.remove("oppen")
+            return;
+        } else if (tickets.value > 7) {
+            alert("Det finns endast 7 biljetter tillgängliga för bokning!");
+            ticketPopup.classList.remove("oppen")
+            return;
+        }
+
+        alert("Bokning bekräftad!");
+        ticketPopup.classList.remove("oppen");
+    });
+
+});
+
+//Bokning popup END
 
 
 

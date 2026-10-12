@@ -373,3 +373,49 @@ footer {
 .slut {
   grid-area: end;
 }
+
+
+
+/* Popup start */
+
+.ticketPopup {
+    display: none;
+    position: relative;
+    background: #1f2637;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupContent {
+  color:white;
+    background:#1f2637;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+
+.ticketPopup.oppen {
+    display: flex;
+     background: #1f2637;
+     display: flex;
+  align-items: center;
+}
+
+#bokaButton{
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  background-color: #e50914;
+  border-radius:0.5rem;
+  padding: 0.5rem;
+  color: white;
+  margin-top: 1rem;
+  
+}
+
+#bokaButton:hover{
+  background-color: white;
+  color: #e50914;
+  transition: ease-in-out, 1s;
+}
+/* Popup slut */
