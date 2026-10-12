@@ -276,22 +276,16 @@ main {
   cursor: not-allowed;
 }
 
-/* Styles för tablet här */
-@media (min-width: 768px) {}
-
-
-/* Styles för desktop här */
-@media (min-width: 1024px) {}
 
 footer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "about about about about"
     "kontakt kontakt kontakt kontakt"
     "footer footer footer footer"
-    "end end end end"
+    "end end end end" 
   ;
   background-color: #161b26;
   gap: 1rem 0;
@@ -419,3 +413,19 @@ footer {
   transition: ease-in-out, 1s;
 }
 /* Popup slut */
+/* Styles för tablet här */
+@media (min-width: 768px) {
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "about about "
+    "footer kontakt"
+    "end end" 
+  ;
+  }
+}
+
+
+/* Styles för desktop här */
+@media (min-width: 1024px) {}
