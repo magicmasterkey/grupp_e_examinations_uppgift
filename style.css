@@ -488,7 +488,7 @@ textarea:hover {
   }
   .footer-links{
     height: 5vh;
-    padding: 1rem;
+    padding: 1.5rem;
   }
   .footer-links li {
     list-style: none;
@@ -499,7 +499,7 @@ textarea:hover {
     align-items: center;
   }
   .slut {
-    padding: 0 0.5rem;
+    padding: 0.7rem;
   }
   
   .mobileNav,
