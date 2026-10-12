@@ -448,10 +448,6 @@ textarea:hover {
       "footer footer"
       "end end";
   }
-  .about {
-    padding: 0 1rem;
-  }
-  
   
   .about h2 {
     font-size: 2.5rem; 
@@ -509,5 +505,35 @@ textarea:hover {
   
   .desktopNav {
     display: flex;
+  }
+}
+@media (min-width: 1200px) {
+  
+  .about p {
+    font-size: 1.25rem; 
+    
+  }
+  
+  .contact label {
+    font-size: 1.25rem;
+    padding: 0;
+  }
+  .contact input,
+  .contact textarea {
+    font-size: 0.9rem;
+    margin: 0;
+    
+  }
+  .contact button {
+    margin-top: 0.5rem;
+    width: 6rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+  .footer-links li {
+    font-size: 1.25rem;
+  }
+  .slut {
+    padding: 0.5rem 1rem;
   }
 }
