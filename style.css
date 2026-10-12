@@ -443,7 +443,6 @@ textarea:hover {
 @media (min-width: 768px) {
   footer {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 5vh;
     grid-template-areas:
       "about kontakt"
       "footer footer"
@@ -484,6 +483,7 @@ textarea:hover {
     width: 7rem;
     height: 2.5rem;
     font-size: 1.25rem;
+    margin-bottom: 2rem;
     
   }
   .footer-links{
@@ -499,7 +499,7 @@ textarea:hover {
     align-items: center;
   }
   .slut {
-    padding: 0.7rem;
+    padding: 0.5rem;
   }
   
   .mobileNav,
