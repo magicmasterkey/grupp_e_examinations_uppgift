@@ -9,6 +9,7 @@ Del1:
 - Albin körde Main
 - Yousef körde nav
 - Bojan körde footer
+- Salma lade grunderna till bokningssytemet
   
 - Vad prioriterade ni i backlog?
 - En utmaning och hur ni löste den.
