@@ -435,6 +435,9 @@ textarea:hover {
   .contact{
     border-left: 1px white solid;
   }
+  .contact button{
+    margin: 1rem;
+  }
   .footer-links{
     height: 5vh;
     padding: 1rem;
@@ -443,6 +446,7 @@ textarea:hover {
     flex-direction: row;
     align-items: center;
   }
+
 
 
   .mobileNav,
