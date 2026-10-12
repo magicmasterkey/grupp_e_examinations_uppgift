@@ -277,7 +277,7 @@ main {
 footer {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, fit-content);
   grid-template-areas:
     "about"
     "kontakt"
@@ -325,12 +325,14 @@ footer a:hover{
   justify-items: center;
   font-size: 1.25rem;
   margin-top: 2rem;
+  padding-bottom: 2rem;
 }
 .contact h2 {
   font-size: 2.5rem;
 }
 .contact label {
   padding: 0.5rem 0;
+  font-size: 1.25rem;
 }
 .contact label,
 .contact button {
@@ -341,6 +343,7 @@ footer a:hover{
   background: #2f3951;
   border: 1px solid white;
   border-radius: 4px;
+  padding: 0.3rem;
    transition: background 0.5s;
 }
 .contact input:focus,
@@ -366,6 +369,7 @@ textarea:hover {
 }
 .footer-links {
   grid-area: footer;
+  height: 40vh;
   border-bottom: 2px white solid;
 }
 
