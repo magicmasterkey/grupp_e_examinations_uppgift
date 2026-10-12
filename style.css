@@ -452,28 +452,61 @@ textarea:hover {
   .about {
     padding: 0 1rem;
   }
+  
+  
+  .about h2 {
+    font-size: 2.5rem; 
+  }
+  .about p {
+    font-size: 1.5rem; 
+    
+  }
   .contact{
     border-left: 1px white solid;
   }
-  .contact button{
-    margin: 1rem;
+  
+  .contact form {
+    font-size: 1.5rem;
+    padding-bottom: 0;
+    line-height: 1.6;
+  }
+  
+  .contact label {
+    font-size: 2rem;
+  }
+  .contact input,
+  .contact textarea {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    
+  }
+  .contact button {
+    width: 7rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    
   }
   .footer-links{
     height: 5vh;
     padding: 1rem;
   }
+  .footer-links li {
+    list-style: none;
+    font-size: 1.6rem;
+  }
   .link-list{
     flex-direction: row;
     align-items: center;
   }
-
-
-
+  .slut {
+    padding: 0 0.5rem;
+  }
+  
   .mobileNav,
   .burgerMenu {
     display: none;
   }
-
+  
   .desktopNav {
     display: flex;
   }
