@@ -335,13 +335,12 @@ textarea:focus,
   list-style: none;
   color: white;
 }
-.footer-links ul {
+.link-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   padding-left: 0;
-  height: 100%;
 }
 
 .footer-links a {
@@ -401,11 +400,25 @@ textarea:focus,
 @media (min-width: 768px) {
   footer {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr 10vh;
     grid-template-areas:
-      "about about "
-      "footer kontakt"
+      "about kontakt"
+      "footer footer"
       "end end";
+  }
+  .about {
+    padding: 0 1rem;
+  }
+  .contact{
+    border-left: 1px white solid;
+  }
+  .footer-links{
+    height: 5vh;
+  }
+  .link-list{
+    flex-direction: row;
+    align-items: center;
+
   }
 
   .mobileNav,
