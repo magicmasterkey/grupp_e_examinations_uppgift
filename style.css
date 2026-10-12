@@ -325,12 +325,13 @@ footer a:hover{
 .contact label,
 .contact button {
   display: block;
-}
+  }
 .contact input,
-textarea {
+.contact textarea {
   background: #2f3951;
   border: 1px solid white;
   border-radius: 4px;
+   transition: background 0.5s;
 }
 .contact input:focus,
 textarea:focus,
@@ -341,9 +342,16 @@ textarea:focus,
 .contact button {
   background: #2f3951;
   border: 1px solid white;
-  border-radius: 4px;
+  border-radius: 8px;
   color: white;
   margin: 0.5rem 0;
+  transition: background 0.5s;
+  width: 4rem;
+  height: 1.5rem;
+}
+.contact button:hover, .contact input:hover,
+textarea:hover {
+  background: #4a5c82;
 }
 .footer-links {
   grid-area: footer;
