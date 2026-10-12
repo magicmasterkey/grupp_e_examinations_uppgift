@@ -299,13 +299,18 @@ footer a:hover{
   grid-area: about;
   border-bottom: 2px white solid;
   margin-top: 1rem;
+  padding: 0 1rem;
+  
 }
 
 .about h2 {
+  font-size: 2.5rem; 
   text-align: center;
   margin-bottom: 1rem;
+  
 }
 .about p {
+ font-size: 1.35rem; 
   margin-bottom: 2rem;
 }
 
@@ -318,6 +323,11 @@ footer a:hover{
 
 .contact form {
   justify-items: center;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+.contact h2 {
+  font-size: 2.5rem;
 }
 .contact label {
   padding: 0.5rem 0;
@@ -344,10 +354,11 @@ textarea:focus,
   border: 1px solid white;
   border-radius: 8px;
   color: white;
-  margin: 0.5rem 0;
+  margin-top: 1.5rem ;
   transition: background 0.5s;
-  width: 4rem;
-  height: 1.5rem;
+  width: 6rem;
+  height: 2.25rem;
+  
 }
 .contact button:hover, .contact input:hover,
 textarea:hover {
@@ -360,12 +371,13 @@ textarea:hover {
 
 .footer-links li {
   list-style: none;
+  font-size: 1.25rem;
 }
 .link-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -376,6 +388,10 @@ textarea:hover {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
+  font-size: 1.25rem;
+}
+.slut h2 {
+  font-size: 2.5rem;
 }
 
 /* Popup start */
