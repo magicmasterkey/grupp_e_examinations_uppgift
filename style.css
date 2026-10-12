@@ -102,6 +102,7 @@ nav ul li button:hover {
   justify-content: center;
   align-items: center;
   display: none;
+  z-index: 99;
 }
 
 .errorMessageContent {
@@ -154,6 +155,7 @@ nav ul li button:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  overflow-y: scroll;
 }
 
 .bookingCard {
@@ -231,7 +233,7 @@ main {
   font-weight: 500;
 }
 
-.movieCard button {
+.buyButton {
   width: fit-content;
   margin: auto;
   background-color: #e50914;
@@ -246,12 +248,12 @@ main {
   transition: ease-in-out, 1s;
 }
 
-.movieCard button:hover {
+.buyButton:hover {
   background-color: white;
   color: #e50914;
 }
 
-.movieCard button:active {
+.buyButton:active {
   color: black;
   background-color: #161b26;
   transition: none;
@@ -354,25 +356,41 @@ textarea:focus,
 /* Popup start */
 
 .ticketPopup {
-  display: none;
-  position: relative;
-  background: #1f2637;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1f2637a1;
+  display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 .popupContent {
+  width: 400px;
+  padding: 2rem;
+  background-color: #1f2637;
   color: white;
-  background: #1f2637;
-  padding: 1rem;
-  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1rem;
 }
 
-.ticketPopup.oppen {
-  display: flex;
-  background: #1f2637;
-  display: flex;
-  align-items: center;
+.popupContent input{
+  background-color: #1f2637;
+  border: 2px solid #e50914;
+  padding: .3rem;
+  border-radius: .5rem;
+  color: white;
+  outline: 0;
+  font-size: 1.2rem;
+}
+
+.popupContent span{
+  color: #f5c518;
 }
 
 #bokaButton {
