@@ -429,6 +429,7 @@ textarea:focus,
   }
   .footer-links{
     height: 5vh;
+    padding: 1rem;
   }
   .link-list{
     flex-direction: row;
