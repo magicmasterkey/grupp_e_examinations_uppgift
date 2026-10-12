@@ -1,211 +1,277 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="se">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Biljett system</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <div class="logo">🎬 Bio</div>
-        <span class="burgerMenu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
-                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </span>
-        <ul class="desktopNav">
-            <li><a href="/">Hem</a></li>
-            <li><a href="#">kontakta</a></li>
-            <li><a href="#">Om oss</a></li>
-            <li><button class="historyBtn">📜 Historik <span>0</span></button></li>
-            <li><button class="totalPriceBtn">🛒 Totalpris <span>0kr</span></button></li>
-        </ul>
-        <ul class="mobileNav">
-            <li><a href="/">Hem</a></li>
-            <li><a href="#">kontakta</a></li>
-            <li><a href="#">Om oss</a></li>
-            <li><button class="historyBtn">📜 Historik <span>0</span></button></li>
-            <li><button class="totalPriceBtn">🛒 Totalpris <span>0kr</span></button></li>
-        </ul>
+      <div class="logo">🎬 Bio</div>
+      <span class="burgerMenu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </span>
+      <ul class="desktopNav">
+        <li><a href="/">Hem</a></li>
+        <li><a href="#">kontakta</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li>
+          <button class="historyBtn">📜 Historik <span>0</span></button>
+        </li>
+        <li>
+          <button class="totalPriceBtn">🛒 Totalpris <span>0kr</span></button>
+        </li>
+      </ul>
+      <ul class="mobileNav">
+        <li><a href="/">Hem</a></li>
+        <li><a href="#">kontakta</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li>
+          <button class="historyBtn">📜 Historik <span>0</span></button>
+        </li>
+        <li>
+          <button class="totalPriceBtn">🛒 Totalpris <span>0kr</span></button>
+        </li>
+      </ul>
     </nav>
     <main>
-        <section class="historyAndCheckout" id="historyAndCheckout">
-            <p>Stuff</p>
-        </section>
-        <section class="movieDisplay" id="movieDisplay">
-            <article class="movieCard" id="backToTheFuture">
-                <div class="moviePoster">
-                    <img src="images/cards/back-to-the-future.jpg" alt='Bild av filmen "Back To The Future"'>
-                </div>
-                <div class="movieInfo">
-                    <h3>Back To The Future</h3>
-                    <p>📅 2026-10-10 • ⏰ 20:30</p>
-                    <div class="moviePrice">
-                        <span>140 kr</span>
-                        <p>7 kvar</p>
-                    </div>
-                </div>
-                <button class="buyButton">Köp biljett</button>
-            
-                <div class="ticketPopup"> 
-                    <div class="popupContent" >
-                        <h3>Välj antal biljetter</h3>
-                     <input type="number" class="tickets" name="tickets" min="1"  max =7 required>
-                    
-            <button class="bokaButton">Boka</button>
-                    </div>
-                </div>
+      <section class="historyAndCheckout" id="historyAndCheckout">
+        <p>Stuff</p>
+      </section>
+      <section class="movieDisplay" id="movieDisplay">
+        <article class="movieCard" id="backToTheFuture">
+          <div class="moviePoster">
+            <img
+              src="images/cards/back-to-the-future.jpg"
+              alt='Bild av filmen "Back To The Future"'
+            />
+          </div>
+          <div class="movieInfo">
+            <h3>Back To The Future</h3>
+            <p>📅 2026-10-10 • ⏰ 20:30</p>
+            <div class="moviePrice">
+              <span>140 kr</span>
+              <p>7 kvar</p>
+            </div>
+          </div>
+          <button class="buyButton">Köp biljett</button>
 
-            </article>
-            <article class="movieCard" id="spiderman">
-                <div class="moviePoster">
-                    <img src="images/cards/spiderman.jpg" alt='Bild av filmen "Spiderman: Into The Spiderverse'>
-                </div>
-                <div class="movieInfo">
-                    <h3>Spiderman</h3>
-                    <p>📅 2026-10-10 • ⏰ 20:30</p>
-                    <div class="moviePrice">
-                        <span>140 kr</span>
-                        <p>7 kvar</p>
-                    </div>
-                </div>
-                <button class="buyButton">Köp biljett</button>
+          <div class="ticketPopup">
+            <div class="popupContent">
+              <h3>Välj antal biljetter</h3>
+              <input
+                type="number"
+                class="tickets"
+                name="tickets"
+                min="1"
+                max="7"
+                required
+              />
 
-                  <div class="ticketPopup"> 
-                    <div class="popupContent" >
-                        <h3>Välj antal biljetter</h3>
-                     <input type="number" class="tickets" name="tickets" min="1"  max =7 required>
-                    
-            <button class="bokaButton">Boka</button>
-                    </div>
-                </div>
+              <button class="bokaButton">Boka</button>
+            </div>
+          </div>
+        </article>
+        <article class="movieCard" id="spiderman">
+          <div class="moviePoster">
+            <img
+              src="images/cards/spiderman.jpg"
+              alt='Bild av filmen "Spiderman: Into The Spiderverse'
+            />
+          </div>
+          <div class="movieInfo">
+            <h3>Spiderman</h3>
+            <p>📅 2026-10-10 • ⏰ 20:30</p>
+            <div class="moviePrice">
+              <span>140 kr</span>
+              <p>7 kvar</p>
+            </div>
+          </div>
+          <button class="buyButton">Köp biljett</button>
 
-            </article>
-            <article class="movieCard" id="theRoom">
-                <div class="moviePoster">
-                    <img src="images/cards/the-room.jpg" alt='Bild av filmen "The Room'>
-                </div>
-                <div class="movieInfo">
-                    <h3>The Room</h3>
-                    <p>📅 2026-10-10 • ⏰ 20:30</p>
-                    <div class="moviePrice">
-                        <span>140 kr</span>
-                        <p>7 kvar</p>
-                    </div>
-                </div>
-                <button class="buyButton">Köp biljett</button>
+          <div class="ticketPopup">
+            <div class="popupContent">
+              <h3>Välj antal biljetter</h3>
+              <input
+                type="number"
+                class="tickets"
+                name="tickets"
+                min="1"
+                max="7"
+                required
+              />
 
-                <div class="ticketPopup"> 
-                    <div class="popupContent" >
-                        <h3>Välj antal biljetter</h3>
-                     <input type="number" class="tickets" name="tickets" min="1"  max =7 required>
-                    
-            <button class="bokaButton">Boka</button>
-                    </div>
-                </div>
+              <button class="bokaButton">Boka</button>
+            </div>
+          </div>
+        </article>
+        <article class="movieCard" id="theRoom">
+          <div class="moviePoster">
+            <img
+              src="images/cards/the-room.jpg"
+              alt='Bild av filmen "The Room'
+            />
+          </div>
+          <div class="movieInfo">
+            <h3>The Room</h3>
+            <p>📅 2026-10-10 • ⏰ 20:30</p>
+            <div class="moviePrice">
+              <span>140 kr</span>
+              <p>7 kvar</p>
+            </div>
+          </div>
+          <button class="buyButton">Köp biljett</button>
 
-            </article>
-            <article class="movieCard" id="theMask">
-                <div class="moviePoster">
-                    <img src="images/cards/the-mask.jpg" alt='Bild av filmen "The Mask'>
-                </div>
-                <div class="movieInfo">
-                    <h3>The Mask</h3>
-                    <p>📅 2026-10-10 • ⏰ 20:30</p>
-                    <div class="moviePrice">
-                        <span>140 kr</span>
-                        <p>7 kvar</p>
-                    </div>
-                </div>
-                <button class="buyButton">Köp biljett</button>
+          <div class="ticketPopup">
+            <div class="popupContent">
+              <h3>Välj antal biljetter</h3>
+              <input
+                type="number"
+                class="tickets"
+                name="tickets"
+                min="1"
+                max="7"
+                required
+              />
 
-                <div class="ticketPopup"> 
-                    <div class="popupContent" >
-                        <h3>Välj antal biljetter</h3>
-                     <input type="number" class="tickets" name="tickets" min="1"  max =7 required>
-                    
-            <button class="bokaButton">Boka</button>
-                    </div>
-                </div>
+              <button class="bokaButton">Boka</button>
+            </div>
+          </div>
+        </article>
+        <article class="movieCard" id="theMask">
+          <div class="moviePoster">
+            <img
+              src="images/cards/the-mask.jpg"
+              alt='Bild av filmen "The Mask'
+            />
+          </div>
+          <div class="movieInfo">
+            <h3>The Mask</h3>
+            <p>📅 2026-10-10 • ⏰ 20:30</p>
+            <div class="moviePrice">
+              <span>140 kr</span>
+              <p>7 kvar</p>
+            </div>
+          </div>
+          <button class="buyButton">Köp biljett</button>
 
-            </article>
-        </section>
+          <div class="ticketPopup">
+            <div class="popupContent">
+              <h3>Välj antal biljetter</h3>
+              <input
+                type="number"
+                class="tickets"
+                name="tickets"
+                min="1"
+                max="7"
+                required
+              />
+
+              <button class="bokaButton">Boka</button>
+            </div>
+          </div>
+        </article>
+      </section>
     </main>
     <footer>
-        <section class="about">
-            <h2>Om oss</h2>
-            <p>Vårt varumärkeslöfte, We Make Movies Better, innebär att vi alltid strävar efter att erbjuda de mest
-                minnesvärda och omvälvande upplevelserna i biografer i världsklass.</p>
-        </section>
-        <section class="contact">
-            <h2>Kontakt saker</h2>
-            <form>
-                <label for="namn">Ditt Namn:</label>
-                <input type="text" id="namn" name="namn" required placeholder="Alex...">
+      <section class="about">
+        <h2>Om oss</h2>
+        <p>
+          Vårt varumärkeslöfte, We Make Movies Better, innebär att vi alltid
+          strävar efter att erbjuda de mest minnesvärda och omvälvande
+          upplevelserna i biografer i världsklass.
+        </p>
+      </section>
+      <section class="contact">
+        <h2>Kontakt saker</h2>
+        <form>
+          <label for="namn">Ditt Namn:</label>
+          <input
+            type="text"
+            id="namn"
+            name="namn"
+            required
+            placeholder="Alex..."
+          />
 
-                <label for="epost">Ditt E-post</label>
-                <input type="email" id="epost" name="epost" required placeholder="example@email.com">
+          <label for="epost">Ditt E-post</label>
+          <input
+            type="email"
+            id="epost"
+            name="epost"
+            required
+            placeholder="example@email.com"
+          />
 
-                <label for="meddelande">Meddelande</label>
-                <textarea id="meddelande" name="meddelande" placeholder="Jag tycker att webbsidan saknar..."></textarea>
-                <button>Skicka</button>
-            </form>
-        </section>
-        <section class="footer-links">
-            <ul>
-                
-                    <li><a href="#movieDisplay">Filmer</a></li>
-                    
-                    <li><a href="#historyAndCheckout">Historik</a></li>
-                
-                    <li><a href="#about">Om Oss</a></li>
-                
-                    <li><a href="#kontakt">Kontakt</a></li>
-                
-                
-                </a>
-            </ul>
-        </section>
-        <section class="slut">
-            <h3>Loga eller namn på bio</h3>
-            <p>&copy; 2026</p>
-        </section>
+          <label for="meddelande">Meddelande</label>
+          <textarea
+            id="meddelande"
+            name="meddelande"
+            placeholder="Jag tycker att webbsidan saknar..."
+          ></textarea>
+          <button>Skicka</button>
+        </form>
+      </section>
+      <section class="footer-links">
+        <ul>
+          <li><a href="#movieDisplay">Filmer</a></li>
+
+          <li><a href="#historyAndCheckout">Historik</a></li>
+
+          <li><a href="#about">Om Oss</a></li>
+
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </section>
+      <section class="slut">
+        <h3>Loga eller namn på bio</h3>
+        <p>&copy; 2026</p>
+      </section>
     </footer>
 
     <div class="errorMessage">
-        <div class="errorMessageContent">
-            <h2>Välj en föreställning först genom att klicka på 'Köp biljett'.</h2>
-            <button>Ok</button>
-        </div>
+      <div class="errorMessageContent">
+        <h2>Välj en föreställning först genom att klicka på 'Köp biljett'.</h2>
+        <button>Ok</button>
+      </div>
     </div>
 
     <div class="yourBookings">
-        <div class="yourBookingConent">
-            <h2>Dina Bokningar</h2>
-            <i>x</i>
-            <div class="booking">
-                <div class="bookingCard">
-                    <h3>Dune: Part Two</h3>
-                    <p>Datum: 2026-10-10 kl. 19:00</p>
-                    <p>Antal: 1 st | Totalt: 150 kr</p>
-                    <span>Bokad: 2026-10-05 22:52</span>
-                </div>
-                <div class="bookingCard">
-                    <h3>Dune: Part Two</h3>
-                    <p>Datum: 2026-10-10 kl. 19:00</p>
-                    <p>Antal: 1 st | Totalt: 150 kr</p>
-                    <span>Bokad: 2026-10-05 22:52</span>
-                </div>
-            </div>
+      <div class="yourBookingConent">
+        <h2>Dina Bokningar</h2>
+        <i>x</i>
+        <div class="booking">
+          <div class="bookingCard">
+            <h3>Dune: Part Two</h3>
+            <p>Datum: 2026-10-10 kl. 19:00</p>
+            <p>Antal: 1 st | Totalt: 150 kr</p>
+            <span>Bokad: 2026-10-05 22:52</span>
+          </div>
+          <div class="bookingCard">
+            <h3>Dune: Part Two</h3>
+            <p>Datum: 2026-10-10 kl. 19:00</p>
+            <p>Antal: 1 st | Totalt: 150 kr</p>
+            <span>Bokad: 2026-10-05 22:52</span>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
