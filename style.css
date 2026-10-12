@@ -43,11 +43,6 @@ nav ul li {
   list-style: none;
 }
 
-.mobileNav,
-.burgerMenu {
-  display: none;
-}
-
 .burgerMenu {
   cursor: pointer;
 }
@@ -71,7 +66,7 @@ nav ul li button:hover {
 
 .historyBtn span {
   background-color: red;
-  padding: .15rem .5rem;
+  padding: 0.15rem 0.5rem;
   border-radius: 50%;
 }
 
@@ -133,7 +128,7 @@ nav ul li button:hover {
 }
 
 .errorMessageContent button {
-  padding: .2rem 3rem;
+  padding: 0.2rem 3rem;
   font-size: 1.2rem;
   border: 0;
   outline: 0;
@@ -158,7 +153,7 @@ nav ul li button:hover {
 
 .yourBookingConent i {
   position: absolute;
-  top: .5rem;
+  top: 0.5rem;
   right: 1rem;
   font-size: 2rem;
   color: #bfbfbf;
@@ -175,16 +170,15 @@ nav ul li button:hover {
 .bookingCard {
   background-color: #2a3245;
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border-left: 3px solid gold;
   font-size: 1rem;
 }
 
 .bookingCard span {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: gray;
 }
-
 
 /* Styles för mobil samt globala styles här*/
 main {
@@ -195,40 +189,90 @@ main {
 }
 
 .movieDisplay {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3rem;
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .movieCard {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
   gap: 1rem;
-  width: 20rem;
-  background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 3rem;
+  width: fit-content;
+  background-color: #1f2637;
+  border-radius: 1rem;
+  padding-bottom: 2rem;
+}
+
+.moviePoster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem 0 0 0;
+}
+
+.movieInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
   padding: 1rem;
 }
 
-.movieCard h2 {
-  font-size: 2rem;
-  text-align: center;
+.moviePrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.movieCard img {
-  width: 12rem;
-  height: 18rem;
+.moviePrice span {
+  color: #f5c518;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.moviePrice p {
+  padding: 0.5rem;
+  background: #10b98126;
+  color: #10b981;
+  border-radius: 0.8rem;
+  font-weight: 500;
 }
 
-/* Styles för tablet här */
-@media (min-width: 768px) {}
+.movieCard button {
+  width: fit-content;
+  margin: auto;
+  background-color: #e50914;
+  font-size: 1rem;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  outline: 0;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: ease-in-out, 1s;
+}
 
+.movieCard button:hover {
+  background-color: white;
+  color: #e50914;
+}
 
-/* Styles för desktop här */
-@media (min-width: 1024px) {}
+.movieCard button:active {
+  color: black;
+  background-color: #161b26;
+  transition: none;
+}
+
+.btn-book:disabled {
+  background: #374151;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
 
 footer {
   display: grid;
@@ -238,8 +282,7 @@ footer {
     "about about about about"
     "kontakt kontakt kontakt kontakt"
     "footer footer footer footer"
-    "end end end end"
-  ;
+    "end end end end";
   background-color: #161b26;
   gap: 1rem 0;
   color: white;
@@ -247,7 +290,6 @@ footer {
 .about {
   grid-area: about;
   border-bottom: 2px white solid;
-  
 }
 
 .about h2 {
@@ -259,7 +301,6 @@ footer {
   grid-area: kontakt;
   text-align: center;
   border-bottom: 2px white solid;
-  
 }
 
 .contact form {
@@ -267,21 +308,22 @@ footer {
 }
 .contact label {
   padding: 0.5rem 0;
-
 }
 .contact label,
-button {
+.contact button {
   display: block;
 }
-.contact input, textarea {
+.contact input,
+textarea {
   background: #2f3951;
   border: 1px solid white;
   border-radius: 4px;
 }
-.contact input:focus, textarea:focus, button:focus {
-  background:#4a5c82;
+.contact input:focus,
+textarea:focus,
+.contact button:focus {
+  background: #4a5c82;
   outline: 2px white solid;
-  
 }
 .contact button {
   background: #2f3951;
@@ -308,15 +350,72 @@ button {
   height: 100%;
 }
 
- 
 .footer-links a {
   text-decoration: none;
   color: white;
-} 
+}
 
 .footer-links a:hover {
   text-decoration: underline;
 }
 .slut {
   grid-area: end;
+}
+
+/* Popup start */
+
+.ticketPopup {
+  display: none;
+  position: relative;
+  background: #1f2637;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupContent {
+  color: white;
+  background: #1f2637;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.ticketPopup.oppen {
+  display: flex;
+  background: #1f2637;
+  display: flex;
+  align-items: center;
+}
+
+#bokaButton {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  background-color: #e50914;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+#bokaButton:hover {
+  background-color: white;
+  color: #e50914;
+  transition: ease-in-out, 1s;
+}
+/* Popup slut */
+
+/* Styles för tablet här */
+@media (min-width: 768px) {
+  .mobileNav,
+  .burgerMenu {
+    display: none;
+  }
+
+  .desktopNav {
+    display: flex;
+  }
+}
+
+/* Styles för desktop här */
+@media (min-width: 1024px) {
 }
