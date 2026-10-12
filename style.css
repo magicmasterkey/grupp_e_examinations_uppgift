@@ -287,10 +287,18 @@ footer {
   background-color: #161b26;
   color: white;
 }
+footer a {
+  text-decoration: none;
+  color: white;
+}
+footer a:hover{
+  text-decoration: underline;
+}
 
 .about {
   grid-area: about;
   border-bottom: 2px white solid;
+  margin-top: 1rem;
 }
 
 .about h2 {
@@ -304,6 +312,7 @@ footer {
 .contact {
   grid-area: kontakt;
   text-align: center;
+  margin-top: 1rem;
   border-bottom: 2px white solid;
 }
 
@@ -343,7 +352,6 @@ textarea:focus,
 
 .footer-links li {
   list-style: none;
-  color: white;
 }
 .link-list {
   display: flex;
@@ -355,16 +363,11 @@ textarea:focus,
   margin: 0;
 }
 
-.footer-links a {
-  text-decoration: none;
-  color: white;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
 .slut {
   grid-area: end;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
 }
 
 /* Popup start */
@@ -412,7 +415,7 @@ textarea:focus,
 @media (min-width: 768px) {
   footer {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 10vh;
+    grid-template-rows: 1fr 5vh;
     grid-template-areas:
       "about kontakt"
       "footer footer"
@@ -430,8 +433,8 @@ textarea:focus,
   .link-list{
     flex-direction: row;
     align-items: center;
-
   }
+
 
   .mobileNav,
   .burgerMenu {
