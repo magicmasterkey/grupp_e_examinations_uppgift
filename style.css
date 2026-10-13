@@ -393,7 +393,7 @@ textarea:focus,
   color: #f5c518;
 }
 
-#bokaButton {
+.bokaButton {
   display: flex;
   align-items: center;
   font-size: 0.9rem;
@@ -404,7 +404,7 @@ textarea:focus,
   margin-top: 1rem;
 }
 
-#bokaButton:hover {
+.bokaButton:hover {
   background-color: white;
   color: #e50914;
   transition: ease-in-out, 1s;
