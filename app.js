@@ -36,18 +36,22 @@ burgerMenu.addEventListener("click", (e) => {
 const totalPriceBtns = document.querySelectorAll(".totalPriceBtn");
 totalPriceBtns.forEach((totalPriceBtn) => {
   totalPriceBtn.addEventListener("click", (e) => {
-    document.querySelector(".errorMessage").style.display = "flex";
+    messageError("Välj en föreställning först genom att klicka på 'Köp biljett'.")
   });
 });
 document.querySelector(".errorMessage").addEventListener("click", (e) => {
   if (e.target === document.querySelector(".errorMessage"))
     return (document.querySelector(".errorMessage").style.display = "none");
 });
-document
-  .querySelector(".errorMessageContent button")
+document.querySelector(".errorMessageContent button")
   .addEventListener("click", (e) => {
     document.querySelector(".errorMessage").style.display = "none";
   });
+
+function messageError(text) {
+  document.querySelector(".errorMessage").style.display = "flex";
+  document.querySelector(".errorMessageContent h2").textContent = text;
+}
 // anpassat meddelande END
 
 // Handtag för historikknapp START
@@ -55,6 +59,7 @@ const historyBtns = document.querySelectorAll(".historyBtn");
 historyBtns.forEach((historyBtn) => {
   historyBtn.addEventListener("click", (e) => {
     document.querySelector(".yourBookings").style.display = "flex";
+    loadHistory()
   });
 });
 document.querySelector(".yourBookings").addEventListener("click", (e) => {
@@ -82,38 +87,196 @@ contactForm.addEventListener("submit", (e) => {
 // Kontakt formulär END
 
 //Bokning popup START
+
+// Hämtar sparade visningar från localStorage eller laddar standarddata
+let bookingArray = JSON.parse(localStorage.getItem("shows")) || [
+  {
+    title: "Back To The Future",
+    time: "2026-10-10, 16:00",
+    price: 99,
+    seat: 20,
+    image: "back-to-the-future"
+  },
+  {
+    title: "Spiderman",
+    time: "2026-10-15, 20:00",
+    price: 120,
+    seat: 0,
+    image: "spiderman"
+  },
+  {
+    title: "The Room",
+    time: "2026-12-25, 13:15",
+    price: 200,
+    seat: 3,
+    image: "the-room"
+  },
+  {
+    title: "The Mask",
+    time: "2026-11-23, 18:30",
+    price: 79,
+    seat: 99,
+    image: "the-mask"
+  }
+];
+
+// dom
 const movieCards = document.querySelectorAll(".movieCard");
+const movieDisplay = document.querySelector(".movieDisplay");
+const popupContentInput = document.querySelector(".popupContent input");
+const popupContentTotal = document.querySelector(".popupContent span");
+const popupContentButton = document.querySelector(".popupContent button");
+const ticketPopup = document.querySelector(".ticketPopup");
 
-movieCards.forEach((movie) => {
-  const buyButton = movie.querySelector(".buyButton");
-  const ticketPopup = movie.querySelector(".ticketPopup");
-  const bokaButton = movie.querySelector(".bokaButton");
-  const tickets = movie.querySelector(".tickets");
+// Sparar gamla bokningar här
+let historyArray = JSON.parse(localStorage.getItem("history")) || [];
+popupContentInput.value = 1;
+let selectedIndex = null;
 
-  buyButton.addEventListener("click", (e) => {
-    ticketPopup.classList.add("oppen");
-  });
+// Visar alla gamla bokningar om det finns
+const booking = document.querySelector(".booking");
+function loadHistory() {
+  if (historyArray.length === 0) {
+    booking.innerHTML = "";
+    booking.style.height = "auto";
+    booking.innerHTML = `
+      <div class="bookingCard">
+        <h3>Inga bokningar ännu!</h3>
+      </div>
+    `;
+  }
+  else {
+    booking.innerHTML = "";
+    booking.style.height = "400px";
+    historyArray.forEach(historyItem => {
+      booking.innerHTML += `
+        <div class="bookingCard">
+          <h3>${historyItem.title}</h3>
+          <p>Datum: ${historyItem.time}</p>
+          <p>Antal: ${historyItem.tickets} st | Totalt: ${historyItem.totalPrice} kr</p>
+          <span>Bokad: ${historyItem.booked}</span>
+        </div>
+      `;
+    });
+  }
+}
 
-  ticketPopup.addEventListener("click", (e) => {
-    if (e.target === ticketPopup) {
-      ticketPopup.classList.remove("oppen");
-    }
-  });
+// Visar hur många bokningar vi har på knappen
+function showHistoryNumber() {
+  const historyBtnSpan = document.querySelector(".historyBtn span");
+  if (historyArray.length === 0) {
+    historyBtnSpan.style.display = "none";
+  }
+  else {
+    historyBtnSpan.textContent = historyArray.length;
+    historyBtnSpan.style.display = "";
+  }
+}
 
-  bokaButton.addEventListener("click", (e) => {
-    if (tickets.value === "" || tickets.value < 1) {
-      alert("Vänligen välj minst en biljett för bokning!");
-      ticketPopup.classList.remove("oppen");
-      return;
-    } else if (tickets.value > 7) {
-      alert("Det finns endast 7 biljetter tillgängliga för bokning!");
-      ticketPopup.classList.remove("oppen");
-      return;
-    }
-
-    alert("Bokning bekräftad!");
-    ticketPopup.classList.remove("oppen");
-  });
+document.querySelector(".ticketPopup").addEventListener("click", (e) => {
+  if (e.target === document.querySelector(".ticketPopup"))
+    return (document.querySelector(".ticketPopup").style.display = "none");
 });
+
+// Ritar upp alla filmer på sidan
+function renderCards() {
+  movieDisplay.innerHTML = "";
+  for (let i = 0; i < bookingArray.length; i++) {
+    const isSoldOut = bookingArray[i].seat === 0;
+    const isExpired = new Date() >= new Date(bookingArray[i].time.replace(", ", "T"));
+    const articleCard = `
+      <article class="movieCard">
+        <div class="moviePoster">
+          <img src="images/cards/${bookingArray[i].image}.jpg" alt='Bild av filmen "${bookingArray[i].title}"' />
+        </div>
+        <div class="movieInfo">
+          <h3>${bookingArray[i].title}</h3>
+          <p>📅 ${bookingArray[i].time}</p>
+          <div class="moviePrice">
+            <span>${bookingArray[i].price} kr</span>
+            <p style="${isSoldOut ? "background: #ef444426; color: #ef4444;" : "background: #10b98126; color: #10b981;"}">${bookingArray[i].seat} platser kvar</p>
+          </div>
+        </div>
+        <button class="buyButton" ${isSoldOut || isExpired ? "style='background:gray; cursor:not-allowed;' disabled" : ""}>
+        ${isSoldOut ? "Utsåld" : isExpired ? "Tiden har gått ut" : "Köp biljett"}</button>
+      </article>
+    `;
+    movieDisplay.innerHTML += articleCard;
+  }
+  // Gör så knapparna öppnar popupen
+  const buyButtons = document.querySelectorAll(".movieCard button");
+  for (let x = 0; x < buyButtons.length; x++) {
+    buyButtons[x].addEventListener("click", (e) => {
+      openPopup(x);
+    })
+  }
+}
+
+// Öppnar popupen och sätter antal till 1
+function openPopup(i) {
+  selectedIndex = i;
+  ticketPopup.style.display = "flex";
+  popupContentInput.focus();
+  popupContentInput.select();
+  popupContentInput.value = 1;
+  updatePrice();
+}
+
+// Sparar allt i localStorage
+function saveStorage() {
+  localStorage.setItem("shows", JSON.stringify(bookingArray));
+  localStorage.setItem("history", JSON.stringify(historyArray));
+}
+
+// Räknar ut totalpriset direkt
+function updatePrice() {
+  if (selectedIndex == null) return;
+  const count = Number(popupContentInput.value);
+  if (count > 0) {
+    popupContentTotal.innerHTML = "Total pris: " + (count * bookingArray[selectedIndex].price) + " kr";
+  }
+  else {
+    popupContentTotal.innerHTML = "Total pris: 0 kr";
+  }
+}
+
+// Funktion för att köpa biljetter
+function buyTicket(x) {
+  const seats = bookingArray[selectedIndex].seat;
+  const requestedSeats = Number(popupContentInput.value);
+  const bookingTime = new Date().toLocaleString('sv-SE').slice(0, 16).replace(' ', ', ');
+  if (requestedSeats <= 0) {
+    messageError("Vänligen ange ett giltigt antal biljetter");
+    return;
+  }
+  if (requestedSeats <= seats) {
+    bookingArray[selectedIndex].seat -= requestedSeats;
+    saveStorage();
+    renderCards();
+    ticketPopup.style.display = "none";
+    // Lägger till i historiken
+    historyArray.unshift({
+      title: bookingArray[selectedIndex].title,
+      time: bookingArray[selectedIndex].time,
+      tickets: requestedSeats,
+      totalPrice: requestedSeats * bookingArray[selectedIndex].price,
+      booked: bookingTime
+    });
+    saveStorage();
+    showHistoryNumber();
+    selectedIndex = null;
+  }
+  else {
+    messageError("Det finns inte plats");
+  }
+}
+
+// Event listeners för knapp och input
+popupContentButton.addEventListener("click", (e) => buyTicket(selectedIndex))
+popupContentInput.addEventListener("input", (e) => updatePrice(selectedIndex))
+
+renderCards();
+loadHistory();
+showHistoryNumber();
 
 //Bokning popup END
