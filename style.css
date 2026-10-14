@@ -3,16 +3,25 @@
 *::before,
 *::after {
   margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  margin-top: 100px;
 }
 
 /* Style nav */
 nav {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #161b26;
-  padding: 2rem;
   font-size: 1.5rem;
+  padding: 2rem;
 }
 
 nav .logo {
@@ -65,27 +74,29 @@ nav ul li button:hover {
   color: #f5c518;
   border: 1px solid #f5c518;
 }
-.desktopNav {
-  display: none;
+
+@media (max-width: 768px) {
+  .desktopNav, .mobileNav {
+    display: none;
+  }
+
+  .burgerMenu {
+    display: flex;
+  }
+
+  .mobileNav {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #161b26;
+    margin-top: 5rem;
+    font-size: 2.5rem;
+  }
 }
 
-.mobileNav,
-.burgerMenu {
-  display: flex;
-}
-
-.mobileNav {
-  width: 100%;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #161b26;
-  margin-top: 5rem;
-  font-size: 2.5rem;
-}
 
 /* css för anpassat meddelande */
 .errorMessage,
@@ -267,48 +278,75 @@ main {
 
 footer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, fit-content);
   grid-template-areas:
-    "about about about about"
-    "kontakt kontakt kontakt kontakt"
-    "footer footer footer footer"
-    "end end end end";
+    "about"
+    "kontakt"
+    "footer"
+    "end" 
+  ;
   background-color: #161b26;
-  gap: 1rem 0;
   color: white;
 }
+footer a {
+  text-decoration: none;
+  color: white;
+}
+footer a:hover{
+  text-decoration: underline;
+}
+
 .about {
   grid-area: about;
   border-bottom: 2px white solid;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  
 }
 
 .about h2 {
+  font-size: 2.5rem; 
   text-align: center;
   margin-bottom: 1rem;
+  
+}
+.about p {
+ font-size: 1.35rem; 
+  margin-bottom: 2rem;
 }
 
 .contact {
   grid-area: kontakt;
   text-align: center;
+  margin-top: 1rem;
   border-bottom: 2px white solid;
 }
 
 .contact form {
   justify-items: center;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+.contact h2 {
+  font-size: 2.5rem;
 }
 .contact label {
   padding: 0.5rem 0;
+  font-size: 1.25rem;
 }
 .contact label,
 .contact button {
   display: block;
-}
+  }
 .contact input,
-textarea {
+.contact textarea {
   background: #2f3951;
   border: 1px solid white;
   border-radius: 4px;
+  padding: 0.3rem;
+   transition: background 0.5s;
 }
 .contact input:focus,
 textarea:focus,
@@ -319,38 +357,47 @@ textarea:focus,
 .contact button {
   background: #2f3951;
   border: 1px solid white;
-  border-radius: 4px;
+  border-radius: 8px;
   color: white;
-  margin: 0.5rem 0;
+  margin-top: 1.5rem ;
+  transition: background 0.5s;
+  width: 6rem;
+  height: 2.25rem;
+  
+}
+.contact button:hover, .contact input:hover,
+textarea:hover {
+  background: #4a5c82;
 }
 .footer-links {
   grid-area: footer;
+  height: 40vh;
   border-bottom: 2px white solid;
 }
 
 .footer-links li {
   list-style: none;
-  color: white;
+  font-size: 1.25rem;
 }
-.footer-links ul {
+.link-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  padding-left: 0;
+  justify-content: space-evenly;
   height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-links a {
-  text-decoration: none;
-  color: white;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
 .slut {
   grid-area: end;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-size: 1.25rem;
+}
+.slut h2 {
+  font-size: 2.5rem;
 }
 
 /* Popup start */
@@ -410,19 +457,101 @@ textarea:focus,
   transition: ease-in-out, 1s;
 }
 /* Popup slut */
-
 /* Styles för tablet här */
 @media (min-width: 768px) {
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "about kontakt"
+      "footer footer"
+      "end end";
+  }
+  
+  .about h2 {
+    font-size: 2.5rem; 
+  }
+  .about p {
+    font-size: 1.5rem; 
+    
+  }
+  .contact{
+    border-left: 1px white solid;
+  }
+  
+  .contact form {
+    font-size: 1.5rem;
+    padding-bottom: 0;
+    line-height: 1.6;
+  }
+  
+  .contact label {
+    font-size: 2rem;
+  }
+  .contact input,
+  .contact textarea {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    
+  }
+  .contact button {
+    width: 7rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    
+  }
+  .footer-links{
+    height: 5vh;
+    padding: 1.5rem;
+  }
+  .footer-links li {
+    list-style: none;
+    font-size: 1.6rem;
+  }
+  .link-list{
+    flex-direction: row;
+    align-items: center;
+  }
+  .slut {
+    padding: 0.5rem;
+  }
+  
   .mobileNav,
   .burgerMenu {
     display: none;
   }
-
+  
   .desktopNav {
     display: flex;
   }
 }
-
-/* Styles för desktop här */
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
+  
+  .about p {
+    font-size: 1.25rem; 
+    
+  }
+  
+  .contact label {
+    font-size: 1.25rem;
+    padding: 0;
+  }
+  .contact input,
+  .contact textarea {
+    font-size: 0.9rem;
+    margin: 0;
+    
+  }
+  .contact button {
+    margin-top: 0.5rem;
+    width: 6rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+  .footer-links li {
+    font-size: 1.25rem;
+  }
+  .slut {
+    padding: 0.5rem 1rem;
+  }
 }
