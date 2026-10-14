@@ -1,76 +1,93 @@
 <!doctype html>
 <html lang="se">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biljett system</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biljett system</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
-</head>
+  <body>
+    <nav>
+      <div class="logo">🎬 Bio</div>
+      <span class="burgerMenu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </span>
+      <ul class="desktopNav">
+        <li><a href="/">Hem</a></li>
+        <li><a href="#">kontakta</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li>
+          <button class="historyBtn">📜 Historik <span>0</span></button>
+        </li>
+        <li>
+          <button class="totalPriceBtn">🛒 Totalpris <span>0kr</span></button>
+        </li>
+      </ul>
+      <ul class="mobileNav">
+        <li><a href="/">Hem</a></li>
+        <li><a href="#">kontakta</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li>
+          <button class="historyBtn">📜 Historik <span>0</span></button>
+        </li>
+        <li>
+          <button class="totalPriceBtn">🛒 Totalpris <span>0kr</span></button>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <section class="historyAndCheckout" id="historyAndCheckout">
+        <p>Stuff</p>
+      </section>
+      <section class="movieDisplay"></section>
+    </main>
 
-<body>
-  <nav>
-    <div class="logo">🎬 Bio</div>
-    <span class="burgerMenu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-    </span>
-    <ul class="desktopNav">
-      <li><a href="/">Hem</a></li>
-      <li><a href="#">kontakta</a></li>
-      <li><a href="#">Om oss</a></li>
-      <li>
-        <button class="historyBtn">📜 Historik <span>0</span></button>
-      </li>
-      <li>
-        <button class="totalPriceBtn">🛒 Totalpris <span>0kr</span></button>
-      </li>
-    </ul>
-    <ul class="mobileNav">
-      <li><a href="/">Hem</a></li>
-      <li><a href="#">kontakta</a></li>
-      <li><a href="#">Om oss</a></li>
-      <li>
-        <button class="historyBtn">📜 Historik <span>0</span></button>
-      </li>
-      <li>
-        <button class="totalPriceBtn">🛒 Totalpris <span>0kr</span></button>
-      </li>
-    </ul>
-  </nav>
-  <main>
-    <section class="historyAndCheckout" id="historyAndCheckout">
-      <p>Stuff</p>
-    </section>
-    <section class="movieDisplay"></section>
-  </main>
-  <footer>
-    <section class="about">
-      <h2>Om oss</h2>
-      <p>
-        Vårt varumärkeslöfte, We Make Movies Better, innebär att vi alltid
-        strävar efter att erbjuda de mest minnesvärda och omvälvande
-        upplevelserna i biografer i världsklass.
-      </p>
-    </section>
-   
     <footer>
-        <section class="about">
-            <h2>Om oss</h2>
-            <p>Välkommen till Filmlandet - din biograf för stora filmupplevelser och oförglömliga stunder! Vi brinner för film och vill erbjuda våra besökare en magisk upplevelse där spännande berättelser och fantastisk underhållning står i centrum. Hos oss finns något för alla, oavsett om du gillar action, komedi, romantik eller äventyr.</p>
-            <p>På Filmlandet strävar vi efter att skapa en trivsam och välkomnande miljö där familjer, vänner och filmälskare kan samlas och njuta av film tillsammans. Vårt mål är att varje biobesök ska bli en minnesvärd upplevelse fylld av glädje, spänning och gemenskap. Vi ser fram emot att välkomna dig till Filmlandet!</p>
-        </section>
-        
-        <section class="contact">
-            <h2>Kontakta Oss</h2>
-            <form>
-                <label for="namn">Ditt Namn:</label>
-                <input type="text" id="namn" name="namn" required placeholder="Alex...">
+      <section class="about">
+        <h2>Om oss</h2>
+        <p>
+          Välkommen till Filmlandet - din biograf för stora filmupplevelser och
+          oförglömliga stunder! Vi brinner för film och vill erbjuda våra
+          besökare en magisk upplevelse där spännande berättelser och fantastisk
+          underhållning står i centrum. Hos oss finns något för alla, oavsett om
+          du gillar action, komedi, romantik eller äventyr.
+        </p>
+        <p>
+          På Filmlandet strävar vi efter att skapa en trivsam och välkomnande
+          miljö där familjer, vänner och filmälskare kan samlas och njuta av
+          film tillsammans. Vårt mål är att varje biobesök ska bli en minnesvärd
+          upplevelse fylld av glädje, spänning och gemenskap. Vi ser fram emot
+          att välkomna dig till Filmlandet!
+        </p>
+      </section>
+
+      <section class="contact">
+        <h2>Kontakta Oss</h2>
+        <form>
+          <label for="namn">Ditt Namn:</label>
+          <input
+            type="text"
+            id="namn"
+            name="namn"
+            required
+            placeholder="Alex..."
+          />
 
           <label for="epost">Ditt E-post</label>
           <input
@@ -89,75 +106,67 @@
           ></textarea>
           <button>Skicka</button>
         </form>
-      
-    </section>
-      
+      </section>
+
       <section class="footer-links">
-      
-       <ul class="link-list">
+        <ul class="link-list">
           <li><a href="#movieDisplay">Filmer</a></li>
 
           <li><a href="#historyAndCheckout">Historik</a></li>
-          
+
           <li><a href="#about">Om Oss</a></li>
-          
+
           <li><a href="#kontakt">Kontakt</a></li>
-        </ul> 
-        
-    </section>
-    
-    <section class="slut">
+        </ul>
+      </section>
+
+      <section class="slut">
         <h3>Filmlandet</h3>
         <p>&copy; 2026</p>
       </section>
-
     </footer>
 
     <div class="errorMessage">
       <div class="errorMessageContent">
-        <h2>Välj en föreställning först genom att klicka på 'Köp biljett'.</h2>
+        <h2></h2>
         <button>Ok</button>
       </div>
-    </section>
-    <section class="slut">
-      <h3>Loga eller namn på bio</h3>
-      <p>&copy; 2026</p>
-    </section>
-  </footer>
-
-  <div class="errorMessage">
-    <div class="errorMessageContent">
-      <h2></h2>
-      <button>Ok</button>
     </div>
-  </div>
 
-  <div class="ticketPopup">
-    <div class="popupContent">
-      <h3>Välj antal biljetter</h3>
-      <input type="number" inputmode="numeric" class="tickets" placeholder="Ange antal" name="tickets" min="1" step="1" required />
-      <span>Total pris: </span>
-      <button class="buyButton">Boka</button>
+    <div class="ticketPopup">
+      <div class="popupContent">
+        <h3>Välj antal biljetter</h3>
+        <input
+          type="number"
+          inputmode="numeric"
+          class="tickets"
+          placeholder="Ange antal"
+          name="tickets"
+          min="1"
+          step="1"
+          required
+        />
+        <span>Total pris: </span>
+        <button class="buyButton">Boka</button>
+      </div>
     </div>
-  </div>
 
-  <div class="yourBookings">
-    <div class="yourBookingConent">
-      <h2>Dina Bokningar</h2>
-      <i>x</i>
-      <div class="booking">
-        <div class="bookingCard">
-          <h3>Inga bokningar ännu!</h3>
-        </div>
-        <!--<div class="bookingCard">
+    <div class="yourBookings">
+      <div class="yourBookingConent">
+        <h2>Dina Bokningar</h2>
+        <i>x</i>
+        <div class="booking">
+          <div class="bookingCard">
+            <h3>Inga bokningar ännu!</h3>
+          </div>
+          <!--<div class="bookingCard">
           <h3>Dune: Part Two</h3>
           <p>Datum: 2026-10-10 kl. 19:00</p>
           <p>Antal: 1 st | Totalt: 150 kr</p>
           <span>Bokad: 2026-10-05 22:52</span>
         </div>-->
+        </div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
