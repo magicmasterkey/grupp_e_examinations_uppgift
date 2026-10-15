@@ -33,12 +33,6 @@ burgerMenu.addEventListener("click", (e) => {
 // Navigationsmeny burger menu END
 
 // anpassat meddelande START
-const totalPriceBtns = document.querySelectorAll(".totalPriceBtn");
-totalPriceBtns.forEach((totalPriceBtn) => {
-  totalPriceBtn.addEventListener("click", (e) => {
-    messageError("Välj en föreställning först genom att klicka på 'Köp biljett'.")
-  });
-});
 document.querySelector(".errorMessage").addEventListener("click", (e) => {
   if (e.target === document.querySelector(".errorMessage"))
     return (document.querySelector(".errorMessage").style.display = "none");
@@ -162,26 +156,30 @@ function loadHistory() {
 }
 
 // Räknar ihop totalpriset för alla bokningar i historiken och visar det
-function loadTotalPrice(){
-  const totalPriceSpan = document.querySelector(".totalPriceBtn span");
-  if(!totalPriceSpan) return;
+function loadTotalPrice() {
+  const totalPriceSpan = document.querySelectorAll(".totalPriceBtn span");
+  if (!totalPriceSpan) return;
   // Plussar ihop priset från varje bokning med reduce function, börjar på 0
   const totalPrice = historyArray.reduce((total, item) => total + item.totalPrice, 0);
   // Skriver ut
-  totalPriceSpan.textContent = totalPrice + " kr";
+  totalPriceSpan.forEach(totalPriceSpan => {
+    totalPriceSpan.textContent = totalPrice + " kr";
+  });
 }
 loadTotalPrice();
 
 // Visar hur många bokningar vi har på knappen
 function showHistoryNumber() {
-  const historyBtnSpan = document.querySelector(".historyBtn span");
-  if (historyArray.length === 0) {
-    historyBtnSpan.style.display = "none";
-  }
-  else {
-    historyBtnSpan.textContent = historyArray.length;
-    historyBtnSpan.style.display = "";
-  }
+  const historyBtnSpan = document.querySelectorAll(".historyBtn span");
+  historyBtnSpan.forEach(historyBtnSpan => {
+    if (historyArray.length === 0) {
+      historyBtnSpan.style.display = "none";
+    }
+    else {
+      historyBtnSpan.textContent = historyArray.length;
+      historyBtnSpan.style.display = "";
+    }
+  });
 }
 
 document.querySelector(".ticketPopup").addEventListener("click", (e) => {
