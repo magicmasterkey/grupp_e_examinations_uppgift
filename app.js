@@ -161,6 +161,17 @@ function loadHistory() {
   }
 }
 
+// Räknar ihop totalpriset för alla bokningar i historiken och visar det
+function loadTotalPrice(){
+  const totalPriceSpan = document.querySelector(".totalPriceBtn span");
+  if(!totalPriceSpan) return;
+  // Plussar ihop priset från varje bokning med reduce function, börjar på 0
+  const totalPrice = historyArray.reduce((total, item) => total + item.totalPrice, 0);
+  // Skriver ut
+  totalPriceSpan.textContent = totalPrice + " kr";
+}
+loadTotalPrice();
+
 // Visar hur många bokningar vi har på knappen
 function showHistoryNumber() {
   const historyBtnSpan = document.querySelector(".historyBtn span");
@@ -264,6 +275,7 @@ function buyTicket(x) {
     });
     saveStorage();
     showHistoryNumber();
+    loadTotalPrice();
     selectedIndex = null;
   }
   else {
