@@ -1,9 +1,19 @@
 // Navigationsmeny burger menu START
 let isBurger = false;
 const mobileNav = document.querySelector(".mobileNav");
+const mobileNavLinks = document.querySelectorAll(".mobileNav li a");
 const burgerMenu = document.querySelector(".burgerMenu");
 
-burgerMenu.addEventListener("click", (e) => {
+burgerMenu.addEventListener("click", navMobile);
+
+for (let x = 0; x < mobileNavLinks.length; x++) {
+  mobileNavLinks[x].addEventListener("click", (e) => {
+    isBurger = true;
+    navMobile();
+  })
+}
+
+function navMobile() {
   if (!isBurger) {
     mobileNav.style.display = "flex";
     mobileNav.style.transition = "all 200ms ease-in-out";
@@ -20,25 +30,20 @@ burgerMenu.addEventListener("click", (e) => {
     mobileNav.style.opacity = "0";
     mobileNav.style.display = "none";
     burgerMenu.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
-                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        `;
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+          stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    `;
     isBurger = false;
   }
-});
+}
+
 // Navigationsmeny burger menu END
 
 // anpassat meddelande START
-const totalPriceBtns = document.querySelectorAll(".totalPriceBtn");
-totalPriceBtns.forEach((totalPriceBtn) => {
-  totalPriceBtn.addEventListener("click", (e) => {
-    messageError("Välj en föreställning först genom att klicka på 'Köp biljett'.")
-  });
-});
 document.querySelector(".errorMessage").addEventListener("click", (e) => {
   if (e.target === document.querySelector(".errorMessage"))
     return (document.querySelector(".errorMessage").style.display = "none");
@@ -162,26 +167,30 @@ function loadHistory() {
 }
 
 // Räknar ihop totalpriset för alla bokningar i historiken och visar det
-function loadTotalPrice(){
-  const totalPriceSpan = document.querySelector(".totalPriceBtn span");
-  if(!totalPriceSpan) return;
+function loadTotalPrice() {
+  const totalPriceSpan = document.querySelectorAll(".totalPriceBtn span");
+  if (!totalPriceSpan) return;
   // Plussar ihop priset från varje bokning med reduce function, börjar på 0
   const totalPrice = historyArray.reduce((total, item) => total + item.totalPrice, 0);
   // Skriver ut
-  totalPriceSpan.textContent = totalPrice + " kr";
+  totalPriceSpan.forEach(totalPriceSpan => {
+    totalPriceSpan.textContent = totalPrice + " kr";
+  });
 }
 loadTotalPrice();
 
 // Visar hur många bokningar vi har på knappen
 function showHistoryNumber() {
-  const historyBtnSpan = document.querySelector(".historyBtn span");
-  if (historyArray.length === 0) {
-    historyBtnSpan.style.display = "none";
-  }
-  else {
-    historyBtnSpan.textContent = historyArray.length;
-    historyBtnSpan.style.display = "";
-  }
+  const historyBtnSpan = document.querySelectorAll(".historyBtn span");
+  historyBtnSpan.forEach(historyBtnSpan => {
+    if (historyArray.length === 0) {
+      historyBtnSpan.style.display = "none";
+    }
+    else {
+      historyBtnSpan.textContent = historyArray.length;
+      historyBtnSpan.style.display = "";
+    }
+  });
 }
 
 document.querySelector(".ticketPopup").addEventListener("click", (e) => {
