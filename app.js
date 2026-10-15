@@ -1,9 +1,19 @@
 // Navigationsmeny burger menu START
 let isBurger = false;
 const mobileNav = document.querySelector(".mobileNav");
+const mobileNavLinks = document.querySelectorAll(".mobileNav li a");
 const burgerMenu = document.querySelector(".burgerMenu");
 
-burgerMenu.addEventListener("click", (e) => {
+burgerMenu.addEventListener("click", navMobile);
+
+for (let x = 0; x < mobileNavLinks.length; x++) {
+  mobileNavLinks[x].addEventListener("click", (e) => {
+    isBurger = true;
+    navMobile();
+  })
+}
+
+function navMobile() {
   if (!isBurger) {
     mobileNav.style.display = "flex";
     mobileNav.style.transition = "all 200ms ease-in-out";
@@ -20,16 +30,17 @@ burgerMenu.addEventListener("click", (e) => {
     mobileNav.style.opacity = "0";
     mobileNav.style.display = "none";
     burgerMenu.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
-                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        `;
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+          stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    `;
     isBurger = false;
   }
-});
+}
+
 // Navigationsmeny burger menu END
 
 // anpassat meddelande START
