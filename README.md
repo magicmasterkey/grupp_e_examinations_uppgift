@@ -9,7 +9,7 @@
 - Albin skapade grund strukturen till sidans html och css, samt har tagit hand om det lite med administriva som code review och lösa merge conflicts.
 - Yousef har skapat den största delen av nav och bokningssytemets funktionalitet.
 - Bojan har tagit hand om utseende, innehåll och funktionalitet av sidans footer.
-- Salma skapade ett visuellt exmepel på hur det kan se ut när man bokar, med bland annat popup som bekräftar.
+- Salma la grunden till popup/bokningsfunktion och hur det ser ut när man bokar , med bland annat popup som bekräftar vid bokning som senare vidareutvecklades.
   
 - Vad prioriterade ni i backlog?
 
