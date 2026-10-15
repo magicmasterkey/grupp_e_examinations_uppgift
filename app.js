@@ -260,7 +260,6 @@ function buyTicket(x) {
   }
   if (requestedSeats <= seats) {
     bookingArray[selectedIndex].seat -= requestedSeats;
-    saveStorage();
     renderCards();
     ticketPopup.style.display = "none";
     // Lägger till i historiken
