@@ -2,7 +2,7 @@
 ## Gruppmedlemmar
 - Albin (magicmasterkey), Yousef (yousef0yousef), Bojan(Jeri-JeriJeri), Salma (salmaabdise)
 ## Kör projektet
-Öppna index.html i webbläsaren (eller live server).
+Öppna index.html i Chrome via live server.
 ## Agil reflektion
 - Hur delade ni upp arbetet?
 
