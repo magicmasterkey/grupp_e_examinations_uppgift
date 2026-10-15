@@ -284,7 +284,7 @@ footer {
     "about"
     "kontakt"
     "end" 
-    /* "footer" */
+    
   ;
   background-color: #161b26;
   color: white;
@@ -371,28 +371,7 @@ textarea:focus,
 textarea:hover {
   background: #4a5c82;
 }
-/* 
-  Vi bästemmde oss att ankor länkar behövs inte
-.footer-links {
-  grid-area: footer;
-  height: 40vh;
-  border-bottom: 2px white solid;
-} */
 
-/* .footer-links li {
-  list-style: none;
-  font-size: 1.25rem;
-} */
-/* .   {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
- */
 .slut {
   grid-area: end;
   display: flex;
@@ -467,7 +446,6 @@ textarea:hover {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
       "about kontakt"
-      "footer footer"
       "end end";
   }
   
@@ -494,28 +472,18 @@ textarea:hover {
   .contact input,
   .contact textarea {
     font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     
   }
   .contact button {
     width: 7rem;
     height: 2.5rem;
     font-size: 1.25rem;
+    margin-top: 0;
     margin-bottom: 2rem;
     
   }
-  /* .footer-links{
-    height: 5vh;
-    padding: 1.5rem;
-  } */
-  /* .footer-links li {
-    list-style: none;
-    font-size: 1.6rem;
-  } */
- /*  .link-list{
-    flex-direction: row;
-    align-items: center;
-  } */
+  
   .slut {
     padding: 0.5rem;
   }
@@ -552,9 +520,7 @@ textarea:hover {
     height: 2rem;
     font-size: 1rem;
   }
- /*  .footer-links li {
-    font-size: 1.25rem;
-  } */
+
   .slut {
     padding: 0.5rem 1rem;
   }
