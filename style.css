@@ -283,8 +283,8 @@ footer {
   grid-template-areas:
     "about"
     "kontakt"
-    "footer"
     "end" 
+    /* "footer" */
   ;
   background-color: #161b26;
   color: white;
@@ -364,23 +364,26 @@ textarea:focus,
   transition: background 0.5s;
   width: 6rem;
   height: 2.25rem;
+  font-size: 1.2rem;
   
 }
 .contact button:hover, .contact input:hover,
 textarea:hover {
   background: #4a5c82;
 }
+/* 
+  Vi bästemmde oss att ankor länkar behövs inte
 .footer-links {
   grid-area: footer;
   height: 40vh;
   border-bottom: 2px white solid;
-}
+} */
 
-.footer-links li {
+/* .footer-links li {
   list-style: none;
   font-size: 1.25rem;
-}
-.link-list {
+} */
+/* .   {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -389,12 +392,12 @@ textarea:hover {
   padding: 0;
   margin: 0;
 }
-
+ */
 .slut {
   grid-area: end;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 1rem 0.5rem;
   font-size: 1.25rem;
 }
 .slut h2 {
@@ -501,18 +504,18 @@ textarea:hover {
     margin-bottom: 2rem;
     
   }
-  .footer-links{
+  /* .footer-links{
     height: 5vh;
     padding: 1.5rem;
-  }
-  .footer-links li {
+  } */
+  /* .footer-links li {
     list-style: none;
     font-size: 1.6rem;
-  }
-  .link-list{
+  } */
+ /*  .link-list{
     flex-direction: row;
     align-items: center;
-  }
+  } */
   .slut {
     padding: 0.5rem;
   }
@@ -549,9 +552,9 @@ textarea:hover {
     height: 2rem;
     font-size: 1rem;
   }
-  .footer-links li {
+ /*  .footer-links li {
     font-size: 1.25rem;
-  }
+  } */
   .slut {
     padding: 0.5rem 1rem;
   }
